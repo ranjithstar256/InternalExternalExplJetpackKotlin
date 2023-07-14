@@ -83,16 +83,15 @@ class MainActivity : ComponentActivity() {
                                 val inputReader =
                                     BufferedReader(InputStreamReader(openFileInput(tf1)))
 
-                                // Toast.makeText(applicationContext,inputReader.readText(),Toast.LENGTH_LONG)
 
-                                while ((inputString == inputReader.readLine()) != null) {
-                                    stringBuffer.append(inputString)
-                                }
-                            } catch (e: IOException) {
+                              //  while ((inputString == inputReader.readLine()) != null) {
+                                    stringBuffer.append(inputReader.readLine().toString())
+                              //  }
+                            }
+                            catch (e: IOException) {
                                 e.printStackTrace()
                             }
-                            //  Displaying data on the toast
-                            Toast.makeText(
+                             Toast.makeText(
                                 applicationContext, stringBuffer.toString(),
                                 Toast.LENGTH_LONG
                             ).show()
